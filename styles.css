@@ -12,7 +12,7 @@
   --bg-card: #1a1a1a;
   --bg-card-hover: #222222;
   --text-primary: #f5f5f5;
-  --text-secondary: #a0a0a0;
+  --text-secondary: #f5f5f5;
   --text-muted: #666666;
   --gradient-munich: linear-gradient(135deg, #0066B2 0%, #004d87 100%);
   --gradient-berlin: linear-gradient(135deg, #E0B31C 0%, #c49a15 100%);
@@ -317,7 +317,7 @@ a:hover {
 
 .timeline-content p {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   margin: 0;
 }
 
@@ -379,7 +379,7 @@ a:hover {
 }
 
 .pillar p {
-  font-size: 0.95rem;
+  font-size: 1.19rem;
 }
 
 /* Page Container */
@@ -484,7 +484,7 @@ a:hover {
 
 .venue-card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1.19rem;
 }
 
 .venue-card.highlight {
@@ -590,7 +590,7 @@ ul.styled-list li::before {
 
 .footer p {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1.125rem;
 }
 
 .footer-links {
