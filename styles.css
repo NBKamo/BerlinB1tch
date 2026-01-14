@@ -223,118 +223,138 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
-.timeline {
+/* Gantt-style Timeline */
+.gantt-timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  padding: 0 1rem;
 }
 
-.timeline-bar {
+/* City Labels Above Bars */
+.gantt-labels {
   display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0.75rem;
+}
+
+.gantt-label {
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
-.timeline-bar::before {
+.gantt-label.munich {
+  color: var(--munich-blue);
+}
+
+.gantt-label.berlin {
+  color: var(--berlin-gold);
+}
+
+.gantt-label:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px currentColor;
+}
+
+/* Timeline Bars */
+.gantt-bars {
+  display: flex;
+  height: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gantt-bar {
+  height: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.gantt-bar.munich {
+  background: var(--munich-blue);
+}
+
+.gantt-bar.berlin {
+  background: var(--berlin-gold);
+}
+
+.gantt-bar:hover {
+  filter: brightness(1.2);
+  transform: scaleY(1.1);
+}
+
+.gantt-bar::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
 }
 
-.timeline-bar.munich {
-  background: rgba(0, 102, 178, 0.15);
-  border: 1px solid rgba(0, 102, 178, 0.3);
+/* Timeline Axis */
+.gantt-axis {
+  position: relative;
+  height: 80px;
+  margin-top: 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.timeline-bar.munich::before {
-  background: var(--gradient-munich);
-}
-
-.timeline-bar.munich:hover {
-  transform: translateX(10px);
-  box-shadow: 0 10px 40px rgba(0, 102, 178, 0.3);
-}
-
-.timeline-bar.munich:hover::before {
-  opacity: 0.2;
-}
-
-.timeline-bar.berlin {
-  background: rgba(224, 179, 28, 0.15);
-  border: 1px solid rgba(224, 179, 28, 0.3);
-}
-
-.timeline-bar.berlin::before {
-  background: var(--gradient-berlin);
-}
-
-.timeline-bar.berlin:hover {
-  transform: translateX(10px);
-  box-shadow: 0 10px 40px rgba(224, 179, 28, 0.3);
-}
-
-.timeline-bar.berlin:hover::before {
-  opacity: 0.2;
-}
-
-.timeline-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.gantt-tick {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-  flex-shrink: 0;
 }
 
-.timeline-bar.munich .timeline-icon {
-  background: var(--gradient-munich);
+.tick-mark {
+  width: 2px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
 }
 
-.timeline-bar.berlin .timeline-icon {
-  background: var(--gradient-berlin);
-}
-
-.timeline-content h3 {
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
+.tick-date {
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.timeline-content p {
+.tick-time {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  margin: 0;
 }
 
-.timeline-arrow {
-  margin-left: auto;
-  font-size: 1.5rem;
-  opacity: 0.5;
-  transition: all 0.3s ease;
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .gantt-label {
+    font-size: 1.1rem;
+  }
+  
+  .gantt-bars {
+    height: 40px;
+  }
+  
+  .tick-date {
+    font-size: 0.9rem;
+  }
+  
+  .tick-time {
+    font-size: 0.8rem;
+  }
 }
-
-.timeline-bar:hover .timeline-arrow {
-  opacity: 1;
-  transform: translateX(5px);
-}
-
-.timeline-bar.munich .timeline-arrow { color: var(--munich-blue); }
-.timeline-bar.berlin .timeline-arrow { color: var(--berlin-gold); }
 
 /* Three Pillars */
 .pillars {

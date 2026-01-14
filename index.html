@@ -36,33 +36,45 @@
       <p>Click on each segment to explore the city guides</p>
     </div>
     
-    <div class="timeline">
-      <a href="Munich.html" class="timeline-bar munich">
-        <div class="timeline-icon">🏰</div>
-        <div class="timeline-content">
-          <h3>Munich (Start)</h3>
-          <p>Feb 12, morning → Feb 14, noon</p>
-        </div>
-        <span class="timeline-arrow">→</span>
-      </a>
+    <!-- Gantt-style Timeline -->
+    <div class="gantt-timeline">
+      <!-- City Labels (above bars) -->
+      <div class="gantt-labels">
+        <a href="Munich.html" class="gantt-label munich" style="width: 22%;">Munich</a>
+        <a href="Berlin.html" class="gantt-label berlin" style="width: 56%;">Berlin</a>
+        <a href="Munich.html" class="gantt-label munich" style="width: 22%;">Munich</a>
+      </div>
       
-      <a href="Berlin.html" class="timeline-bar berlin">
-        <div class="timeline-icon">🐻</div>
-        <div class="timeline-content">
-          <h3>Berlin</h3>
-          <p>Feb 14, noon → Feb 20, noon</p>
-        </div>
-        <span class="timeline-arrow">→</span>
-      </a>
+      <!-- Timeline Bars -->
+      <div class="gantt-bars">
+        <a href="Munich.html" class="gantt-bar munich" style="width: 22%;"></a>
+        <a href="Berlin.html" class="gantt-bar berlin" style="width: 56%;"></a>
+        <a href="Munich.html" class="gantt-bar munich" style="width: 22%;"></a>
+      </div>
       
-      <a href="Munich.html" class="timeline-bar munich">
-        <div class="timeline-icon">🏔️</div>
-        <div class="timeline-content">
-          <h3>Munich (Return)</h3>
-          <p>Feb 20, noon → Feb 23, noon</p>
+      <!-- Timeline Axis -->
+      <div class="gantt-axis">
+        <div class="gantt-tick" style="left: 0%;">
+          <span class="tick-mark"></span>
+          <span class="tick-date">2/12</span>
+          <span class="tick-time">Morning</span>
         </div>
-        <span class="timeline-arrow">→</span>
-      </a>
+        <div class="gantt-tick" style="left: 22%;">
+          <span class="tick-mark"></span>
+          <span class="tick-date">2/14</span>
+          <span class="tick-time">Noon</span>
+        </div>
+        <div class="gantt-tick" style="left: 78%;">
+          <span class="tick-mark"></span>
+          <span class="tick-date">2/20</span>
+          <span class="tick-time">Noon</span>
+        </div>
+        <div class="gantt-tick" style="left: 100%;">
+          <span class="tick-mark"></span>
+          <span class="tick-date">2/23</span>
+          <span class="tick-time">Noon</span>
+        </div>
+      </div>
     </div>
   </section>
 
