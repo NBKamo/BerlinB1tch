@@ -525,7 +525,7 @@ a:hover {
 
 /* Full-width media */
 .full-width-media {
-  width: auto;
+  width: 100%;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -533,7 +533,7 @@ a:hover {
 }
 
 .full-width-media img {
-  width: auto;
+  width: 1000px;
   height: auto;
   display: block;
 }
