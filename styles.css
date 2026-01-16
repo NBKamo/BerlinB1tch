@@ -525,7 +525,7 @@ a:hover {
 
 /* Full-width media */
 .full-width-media {
-  width: 100%;
+  width: 1000px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
