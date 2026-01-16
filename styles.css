@@ -207,7 +207,7 @@ a:hover {
 
 /* Page Hero (shared title style) */
 .page-hero {
-  min-height: 55vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
